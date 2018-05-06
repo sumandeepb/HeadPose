@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HeadPose", "HeadPose\HeadPose.vcxproj", "{70930CDF-31DA-4596-A3C9-53038A75B112}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Track2D", "Track2D\Track2D.vcxproj", "{B373D98B-27DE-4A48-8A16-7074D94B008E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70930CDF-31DA-4596-A3C9-53038A75B112}.Debug|Win32.ActiveCfg = Debug|Win32
+		{70930CDF-31DA-4596-A3C9-53038A75B112}.Debug|Win32.Build.0 = Debug|Win32
+		{70930CDF-31DA-4596-A3C9-53038A75B112}.Release|Win32.ActiveCfg = Release|Win32
+		{70930CDF-31DA-4596-A3C9-53038A75B112}.Release|Win32.Build.0 = Release|Win32
+		{B373D98B-27DE-4A48-8A16-7074D94B008E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B373D98B-27DE-4A48-8A16-7074D94B008E}.Debug|Win32.Build.0 = Debug|Win32
+		{B373D98B-27DE-4A48-8A16-7074D94B008E}.Release|Win32.ActiveCfg = Release|Win32
+		{B373D98B-27DE-4A48-8A16-7074D94B008E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
