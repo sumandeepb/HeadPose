@@ -1,7 +1,7 @@
 # HeadPose
 Real-time Webcam Head Pose Tracker
 
-Software application developed in VC++ using OpenCV library to capture realtime video feed from the webcam and detect the most prominent face in the video and subsequently tracks itsposition, orientation and movement velocity
+Software application developed in VC++ using OpenCV library to capture realtime video feed from the webcam and detect the most prominent face in the video and subsequently track it's position, orientation and movement velocity.
 
 The project is released under GNU Lesser General Public License v3.0 as specified in the LICENSE.LESSER file.
 
