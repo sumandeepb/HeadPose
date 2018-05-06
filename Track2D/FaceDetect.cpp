@@ -1,9 +1,25 @@
 /*
- *  Confidential and Proprietary!
- *  All Rights Reserved by Perceptive Devices LLC. 2013
- *  Copyrights owned by Perceptive Devices LLC.
- *
- */
+ *     Copyright (C) 2013-2018 Sumandeep Banerjee
+ * 
+ *     This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU Lesser General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ * 
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ * 
+ *     You should have received a copy of the GNU Lesser General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/* 
+ * File:   
+ * Author: sumandeep
+ * Email:  sumandeep.banerjee@gmail.com
+*/
 
 #include <iostream>
 #include <string>
@@ -15,8 +31,8 @@ using namespace cv;
 const String g_strFrontCascade = "haarcascade_frontalface_alt_tree.xml";  // frontal face detector
 const String g_strLeftEyeCascade = "haarcascade_lefteye_2splits.xml";	  // left eye detector	
 const String g_strRightEyeCascade = "haarcascade_righteye_2splits.xml";	  // right eye detector	
-const String g_strNoseCascade = "haarcascade_mcs_nose.xml";	  // right eye detector	
-const String g_strMouthCascade = "haarcascade_mcs_mouth.xml";	  // right eye detector	
+const String g_strNoseCascade = "haarcascade_mcs_nose.xml";	              // nose detector	
+const String g_strMouthCascade = "haarcascade_mcs_mouth.xml";	          // mouth detector	
 
 // Detect Frontal Face. Assume input image to be 8-bit grayscale
 int detectFrontalFace( const Mat& imageFrame, Rect& faceRect )
@@ -44,14 +60,9 @@ int detectFrontalFace( const Mat& imageFrame, Rect& faceRect )
 	// Detect Faces in the Image
 	cascadeFace.detectMultiScale ( imageFrame, faces,
         1.1, // Scale Factor
-		2,	 // Min Neighbors  (Try 3 for better accuracy 
-		0
-	    //|CV_HAAR_DO_CANNY_PRUNING   
-        |CV_HAAR_FIND_BIGGEST_OBJECT   // *** Reduces time by 50+% (for Haar)!!
-        // |CV_HAAR_DO_ROUGH_SEARCH
-        // |CV_HAAR_SCALE_IMAGE
- 		,
-        Size(30, 30));  // Originally 30  (Does not make a difference if looking for Biggest Object; else 50x50 is better)
+		3,	 // Min Neighbors
+		0 | CV_HAAR_FIND_BIGGEST_OBJECT,
+        Size(30, 30));
  
 	// no face detected, return error
 	if ( faces.size() <= 0 )
@@ -59,9 +70,6 @@ int detectFrontalFace( const Mat& imageFrame, Rect& faceRect )
 		//cerr << "ERROR: Could not detect Frontal Face" << endl;
 		return -1;
 	}
-
-	// sort faces from largest to smallest
-	// sort
 
 	// return largest face
 	faceRect = faces[0];
